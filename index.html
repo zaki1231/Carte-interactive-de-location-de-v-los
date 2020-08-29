@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <meta name="viewport" content="width=device-width">
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Carte interactive de réservation de vélos - Toulouse -</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        - Toulouse - Réservation de vélo en libre service
+      </h1>
+    </header>
+    <section class="slider">
+      <div id="slider_container">
+        <div id="slider">
+          <figure class="selected">
+            <img src="./images/1.jpg" alt="img1" />
+            <figcaption>Choisissiez votre station</figcaption>
+          </figure>
+          <figure>
+            <img src="./images/2.jpg" alt="img2" />
+            <figcaption>Réservez votre vélo</figcaption>
+          </figure>
+          <figure>
+            <img src="./images/3.jpg" alt="img3" />
+            <figcaption>Finalisez votre réservation</figcaption>
+          </figure>
+        </div>
+        <div>
+          <a href="#" id="precbtn"> <i class="fas fa-angle-left"></i></a>
+        </div>
+        <div>
+          <a href="#" id="suivbtn"> <i class="fas fa-angle-right"></i></a>
+        </div>
+        <div>
+          <a href="#" id="pausebtn"> <i class="fas fa-pause"></i></a>
+        </div>
+        <div>
+          <a href="#" id="playbtn"> <i class="fas fa-play"></i></a>
+        </div>
+        
+      </div>
+    </section>
+
+    
+    <h3 class="font-weight-normal">
+      Cliquez sur la carte pour choisir une station
+    </h3>
+    <section class="carte_resv">
+      <span class="border border-info"></span>
+      <div id="carte"></div>
+      <div id="reservation">
+        <ul id="bloc1">
+          <h4 class="font-weight-normal">
+            Sélectionnez la station de votre choix
+          </h4>
+          <li>
+            <img
+              src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png"
+            />
+            <p>Nombre de vélos d'isponible > 10</p>
+          </li>
+          <li>
+            <img
+              src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png"
+            />
+            <p>Nombre de vélos d'isponible > 10</p>
+          </li>
+          <li>
+            <img
+              src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png"
+            />
+            <p>Aucun vélos d'isponible</p>
+          </li>
+        </ul>
+        <div id="bloc2">
+          <div id="bloc_reservation">
+            <h4 id="nomStation" class="font-weight-normal"></h4>
+            <p id="adresseStation"></p>
+            <p id="nbrDePlaces"></p>
+            <p id="nbrDeVelosDispo"></p>
+            <p id="reservastionImpossible"></p>
+            <a
+              id="bouton_reserver"
+              href="#canvas_div"
+              class="btn btn-outline-info waves-effect"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bloc_signature">
+      <div id="bloc_resv">
+        <form method="post" action="">
+          <input id="nom" />
+          <label for="name" class="">Votre Nom</label>
+          <input id="prenom" />
+          <label for="name" class="">Votre Prenom</label>
+        </form>
+
+        <div id="canvas_div">
+          <p>Veuillez signer avant de valider</p>
+          <canvas id="canvas_container"> </canvas>
+          <button
+            id="bouton_valider"
+            type="button"
+            class="btn btn-outline-info waves-effect"
+          >
+            validez !
+          </button>
+        </div>
+      </div>
+    </section>
+    <div id="conteneurReservation"></div>
+
+    <script src="./js/slider.js"></script>
+    <script src="./js/station.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/reservation.js"></script>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

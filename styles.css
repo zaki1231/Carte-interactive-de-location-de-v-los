@@ -1,0 +1,481 @@
+
+body {
+    font-family: -webkit-pictograph;
+}
+
+
+    #slider_container{
+        overflow: hidden;
+        width: 50%;
+        margin: auto;
+        position: relative;
+    }
+
+    header {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .slider {
+        margin-bottom: 50px;
+        padding-top: 15px;
+    }
+
+    header img { 
+        height: 150px;
+        margin-left: 50px;
+    }
+
+    h1 {
+        height: 50px;
+        padding-top: 10px;
+        width: 1200px;
+        text-align: center;
+        font-size: 30px;
+        color:#424242;
+        font-family: 'Nunito', sans-serif, Arial, Helvetica;
+        margin-left: 350px;
+    }
+
+    #suivbtn {
+        position: absolute;
+        top: 40%;
+        right: 0;		
+        border-radius: 100px 0px 0px 100px;
+        background-color: #00000094;
+        width: 30px;
+        height: 50px;
+    }
+
+    #suivbtn i{
+        color: white;
+        font-size: 35px;
+        margin-left: 8px;
+        margin-top: 5px;
+    }
+
+    #precbtn{
+        position: absolute;
+        top: 40%;
+        border-radius: 0px 100px 100px 0px;
+        background-color: #00000094;
+        width: 30px;
+        left: 0;
+        height: 50px;
+    }
+
+    #precbtn i{
+        color: white;
+        font-size: 35px;
+        margin-left: 3px;
+        margin-top: 5px;
+    }
+
+    #pausebtn {
+        position: absolute;
+        top: 82%;
+        border-radius: 100px 100px 0px 0px;
+        background-color: #00000094;
+        width: 50px;
+        height: 40px;
+        left: 48%;
+    }
+
+    #playbtn {
+        position: absolute;
+        top: 82%;
+        border-radius: 100px 100px 0px 0px;
+        background-color: #00000094;
+        width: 50px;
+        height: 40px;
+        left: 48%;
+    }
+
+
+    #pausebtn i{
+        color: white;
+        font-size: 25px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    #playbtn i{
+        color: white;
+        font-size: 25px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    #slider{
+        display: flex;
+        width: 100%;
+        height: 500px;
+    }
+
+    #slider figure{
+        display: none;
+        width: 100%;
+        height: 450px;
+    
+        border-radius: 5px;
+    }     
+
+    #slider img{
+        width: 100%;
+        height: 450px;
+        border-radius: 5px;
+    }     
+
+    figcaption {
+        height: 50px;
+        background-color: #EEEEEE;
+        font-size: 30px;
+        text-align: center;
+        font-family: -webkit-pictograph;
+    }
+
+    @keyframes effet {
+        from{
+        opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    #slider figure.selected {
+        animation: effet 2s;
+        display: block;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: -webkit-pictograph;
+    }
+
+    #carte{
+        width: 700px;
+        height: 400px;
+    }
+
+    #bloc2 {
+        width: 500px;
+        height: 400px;
+        background:#bdbdbd42;
+    }
+
+    canvas {
+        border: 1px solid black;
+        width: 300px;
+        height: 200px;
+    }
+
+    #canvas_div {
+        padding-left: 70px;
+        padding-top: 20px;
+        
+    }
+
+    #bloc_reservation{
+        padding-top: 50px;
+    }
+
+    #bloc_resv {
+        display: flex;
+        margin-top: 20px;
+        background: #F5F5F5;
+        width: 700px;
+        margin-left: 600px;
+    }
+
+
+    label {
+        padding-left: 20px;
+        padding-top: 5px;
+        font-size: 15px;
+    }
+        
+    #bloc1{
+        flex-direction: column;
+        width: 500px;
+        height: 400px;
+        background:#bdbdbd42;
+    }
+
+    #bloc1 img{
+        width: 25px;
+        padding-top: 50px;
+        margin-left: 10px;
+    }
+
+    li{
+        display: flex;
+    }
+
+    li p{
+        padding-left: 20px;
+        font-size: 18px;
+        margin-top: 60px;
+        height: 20px;
+    }
+
+    .carte_resv {
+        display: flex;
+        margin-left: 350px;
+        margin-top: 20px;
+    }
+
+    p {
+        padding-left: 30px;
+        font-size: 18px;
+    }    
+
+    h4{
+        font-size: 25px;
+        padding-top: 20px;
+        text-align: center;
+        font-weight: 500;
+        padding-bottom: 20px;
+    }
+
+    #bouton_reserver {
+        margin-top: 20px;
+        margin-left: 170px;
+        font-size: 15px;
+        width: 160px;
+    
+    }
+
+    #bouton_valider {
+        width: 150px;
+        margin-top: 20px;
+        margin-left: 80px;
+        font-size: 15px;
+    }
+
+    #conteneurReservation{
+        height:70px;
+        background:#bdbdbd42;
+        width: 1100px;
+        margin-left: 400px;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    input {
+        width: 230px;
+        height: 35px;
+        margin-left: 20px;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+    }
+
+    #nom {
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+        padding-left: 10px;
+    }
+
+    #prenom {
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+        padding-left: 10px;
+    }
+
+
+@media screen and (min-width: 360px) and (max-width: 900px) {
+    
+    #conteneurReservation{
+        height:80px;
+        width: 100%;
+        margin-left: 0;
+        padding-top: 0;
+        font-size: 15px;
+    }
+    
+    h1 {
+        height: 70px;
+        font-size: 25px;
+        margin-left: 10px;
+    }
+
+    #slider {
+        height: 100%;
+    }
+
+    #slider_container {
+        width: 100%;
+    }
+
+    .slider {
+        margin-bottom: 0;
+    }
+
+    #slider img {
+        width: 100%;
+        height: none;
+        height: 300px;
+    }
+
+    #slider figure {
+        width: 100%;
+        height: 100%;
+        
+    }
+    figcaption {
+        height: 40px;
+        font-size: 20px;
+    }
+  
+    #precbtn {
+        top: 35%;
+        width: 20px;
+        height: 40px;
+    }
+
+    #precbtn i {
+        font-size: 25px;
+        margin-left: 2px;
+        margin-top: 7px;
+    }
+
+    #suivbtn {
+        top: 35%;
+        width: 20px;
+        height: 40px;
+    }
+    #suivbtn i {
+        font-size: 25px;
+        margin-left: 5px;
+        margin-top: 7px;
+    }
+
+    #pausebtn {
+        top: 77.5%;
+        width: 30px;
+        height: 25px;
+    }
+
+    #pausebtn i {
+        font-size: 15px;
+        margin-left: 9px;
+        margin-top: 8px;
+    }
+
+    #playbtn {
+        top: 77.5%;
+        width: 30px;
+        height: 25px;
+    }
+
+    #playbtn i {
+        font-size: 15px;
+        margin-left: 9px;
+        margin-top: 8px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .carte_resv {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #carte {
+        width: 90%;
+        height: 400px;
+        margin: auto;
+    }
+
+    #bloc1 {
+        flex-direction: column;
+        width: 100%;
+        height: 300px;
+        background: #bdbdbd42;
+    }
+
+    #bloc2 {
+        width: 100%;
+        height: 350px;
+        background: #bdbdbd42;
+    }
+
+    li p {
+        padding-left: 20px;
+        font-size: 15px;
+        margin-top: 15px;
+        height: 20px;
+    }
+
+    #bloc1 img {
+        width: 25px;
+        padding-top: 8px;
+        margin-left: 10px;
+    }
+
+    h4 {
+        font-size: 18px;
+        padding-top: 20px;
+        font-weight: 500;
+        padding-bottom: 20px;
+    }
+
+    #bloc_reservation {
+        padding-top: 0;
+    }
+
+    #bloc_resv {
+        display: flex; 
+        flex-direction: column;
+        margin-top: 20px;
+        background: #F5F5F5;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #bouton_reserver {
+        margin-left: 100px;  
+    }
+
+    #bouton_valider {
+        width: 150px;
+        margin-right: 0;
+        margin-left: 5px;
+        font-size: 15px;
+    }
+    
+    #canvas_div {
+        padding-left: 80px;
+        padding-top: 20px;
+    }
+
+    #canvas_div p{
+        padding-left: 0;
+    }
+
+    canvas {
+        border: 1px solid black;
+        width: 180px;
+        height: 180px;
+    }
+
+    form {
+        margin-top: 0;
+    }
+}
